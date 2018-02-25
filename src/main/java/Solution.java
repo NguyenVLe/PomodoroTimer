@@ -13,6 +13,7 @@ public class Solution extends Thread {
     static boolean running = false;
     static boolean paused = true;
     static boolean begin = false;
+    static JTextArea testArea2 =new JTextArea("25 Mins & 00 Seconds");;
 
     public static void main(String[] args) {
         running = true;
@@ -22,7 +23,7 @@ public class Solution extends Thread {
 
         JPanel panel = new JPanel();
         JTextArea testArea = new JTextArea("Pomodoro Timer");
-        JTextArea testArea2 = new JTextArea("25 Mins & 00 Seconds");
+//        JTextArea testArea2 = new JTextArea("25 Mins & 00 Seconds");
 
         // Add button to JPanel
         panel.add(testArea);

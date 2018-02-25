@@ -10,12 +10,9 @@ public class PomodoroThread implements Runnable {
     protected int time = 1500;
     private int longBreak = 0;
     private boolean currentBreak = false;
+    Frame frame;
 
     public void run() {
-//        JFrame frame = new JFrame("Pomodoro Timer");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().width/4,Toolkit.getDefaultToolkit().getScreenSize().height/2);
-//        frame.setVisible(true);
         while (true) {
             while(!Solution.paused && Solution.begin == true){
                 if (!Solution.running) {
@@ -27,9 +24,10 @@ public class PomodoroThread implements Runnable {
                     --time;
                     if(currentBreak){
                         System.out.println("CURRENTLY ON BREAK: Mins: " + this.time/60 + " Seconds: " + this.time%60 + " Remaining");
+
                     }
                     else{
-                        System.out.println("Mins: " + this.time/60 + " Seconds: " + this.time%60 + " Remaining");
+                        Solution.testArea2.setText("Mins " + Integer.toString( this.time/60) + " Seconds " + Integer.toString(this.time%60) );
                     }
                 }
                 else{
@@ -55,9 +53,6 @@ public class PomodoroThread implements Runnable {
                 }
             }
         }
-    }
-    public void suspend(){
-
     }
 
 }

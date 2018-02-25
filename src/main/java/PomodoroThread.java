@@ -27,7 +27,7 @@ public class PomodoroThread implements Runnable {
 
                     }
                     else{
-                        Solution.testArea2.setText("Mins " + Integer.toString( this.time/60) + " Seconds " + Integer.toString(this.time%60) );
+                        Solution.testArea2.setText( Integer.toString( this.time/60) +  " Mins & "  + Integer.toString(this.time%60) + " Seconds "  );
                     }
                 }
                 else{

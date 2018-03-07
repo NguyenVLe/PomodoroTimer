@@ -7,8 +7,8 @@ import java.awt.*;
  */
 public class PomodoroThread implements Runnable {
 
-//    protected int time = 1500;
-    protected int time = 5;
+    protected int time = 1500;
+//    protected int time = 25;
     private int longBreak = 0;
     private boolean currentBreak = false;
     private boolean timeFinish = false;
@@ -33,8 +33,8 @@ public class PomodoroThread implements Runnable {
                     timeFinish = true;
                     //is NOT the 5th break and NOT already on break
                     if(longBreak  != 4 && !currentBreak){
-                        //                    this.time = 180;
-                        this.time = 10;
+                        this.time = 180;
+//                        this.time = 30;
                         longBreak++;
                         currentBreak = true;
                         Solution.paused = true;
@@ -44,8 +44,8 @@ public class PomodoroThread implements Runnable {
                     //IS the 5th break while NOT being on break
                     else if(!currentBreak){
                         longBreak =0;
-//                    this.time = 900;
-                        this.time = 15;
+                        this.time = 900;
+//                        this.time = 50;
                         currentBreak = true;
                         Solution.paused = true;
                         Solution.button.setText("Begin Break");
@@ -55,8 +55,8 @@ public class PomodoroThread implements Runnable {
                     else{
                         currentBreak = false;
                         Solution.paused = true;
-//                    this.time = 1500;
-                        this.time = 25;
+                        this.time = 1500;
+//                        this.time = 25;
                         Solution.button.setText("Resume Work");
                         Solution.testArea2.setText(Integer.toString( this.time/60)
                                 +  " Mins & "  + Integer.toString(this.time%60) + " Seconds ");

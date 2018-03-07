@@ -19,12 +19,12 @@ public class PomodoroThread implements Runnable {
                 timeFinish= false;
                 --time;
                 if(currentBreak){
-                    Solution.testArea2.setText("BREAK " + Integer.toString(longBreak) +": "
+                    Solution.changeText.setText("BREAK " + Integer.toString(longBreak) +": "
                             + Integer.toString( this.time/60) +
                             " Mins & "  + Integer.toString(this.time%60) + " Seconds " );
                 }
                 else{
-                    Solution.testArea2.setText( Integer.toString( this.time/60)
+                    Solution.changeText.setText( Integer.toString( this.time/60)
                             +  " Mins & "  + Integer.toString(this.time%60) + " Seconds "  );
                 }
 
@@ -39,7 +39,7 @@ public class PomodoroThread implements Runnable {
                         currentBreak = true;
                         Solution.paused = true;
                         Solution.button.setText("Begin Break");
-                        Solution.testArea2.setText("3 Mins & 0 Seconds");
+                        Solution.changeText.setText("3 Mins & 0 Seconds");
                     }
                     //IS the 5th break while NOT being on break
                     else if(!currentBreak){
@@ -49,7 +49,7 @@ public class PomodoroThread implements Runnable {
                         currentBreak = true;
                         Solution.paused = true;
                         Solution.button.setText("Begin Break");
-                        Solution.testArea2.setText("15 Mins & 0 Seconds");
+                        Solution.changeText.setText("15 Mins & 0 Seconds");
                     }
                     //NOT on break
                     else{
@@ -58,7 +58,7 @@ public class PomodoroThread implements Runnable {
                         this.time = 1500;
 //                        this.time = 25;
                         Solution.button.setText("Resume Work");
-                        Solution.testArea2.setText(Integer.toString( this.time/60)
+                        Solution.changeText.setText(Integer.toString( this.time/60)
                                 +  " Mins & "  + Integer.toString(this.time%60) + " Seconds ");
                     }
                 }
@@ -77,5 +77,6 @@ public class PomodoroThread implements Runnable {
             }
         }
     }
+
 
 }

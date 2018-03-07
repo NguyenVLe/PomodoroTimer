@@ -21,7 +21,7 @@ public class Solution extends Thread {
 
     static boolean paused = true;
     static boolean begin = false;
-    static JTextArea testArea2 =new JTextArea("25 Mins & 00 Seconds");
+    static JTextArea changeText =new JTextArea("25 Mins & 00 Seconds");
     static JButton button = new JButton("Begin Timer!");
     static AudioDataStream asd;
     static AudioPlayer MGP = AudioPlayer.player;
@@ -46,7 +46,7 @@ public class Solution extends Thread {
 
         JFrame frame = new JFrame("Pomodoro Timer");
         JPanel panel = new JPanel();
-        JTextArea testArea = new JTextArea("Pomodoro Timer");
+        JTextArea titleText = new JTextArea("Pomodoro Timer");
 
         // Add button to JPanel
 
@@ -61,11 +61,11 @@ public class Solution extends Thread {
         frame.setSize(xScreen, yScreen);
 
 
-        testArea.setBounds(xScreen/3,0,200,20);
-        testArea2.setBounds(xScreen/3,yScreen/8,200,20);
+        titleText.setBounds(xScreen/3,0,200,20);
+        changeText.setBounds(xScreen/3,yScreen/8,200,20);
         button.setBounds(xScreen/3,yScreen/4,200,30);
-        panel.add(testArea);
-        panel.add(testArea2);
+        panel.add(titleText);
+        panel.add(changeText);
         panel.add(button);
         PomodoroThread p = new PomodoroThread();
         Thread t1= new Thread(p);

@@ -15,7 +15,6 @@ import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.Thread;
-import java.io.*;
 import sun.audio.*;
 public class Solution extends Thread {
 
